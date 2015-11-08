@@ -3,13 +3,13 @@
 $std = trim(fgets(STDIN));
 list($a, $b) = explode(" ", $std);
 
-$taka = $b / $a;
-$aoki = $d / $c;
+$time = $a <= 12 ? $a : $a - 12;
+$minute = $b;
 
-if ($taka > $aoki) {
-    printf("%s\n", 'TAKAHASHI');
-} else if ($aoki > $taka) {
-    printf("%s\n", 'AOKI');
-} else {
-    printf("%s\n", 'DRAW');
-}
+$ra = $time * (360 / 12);
+$ra = $ra + $minute * 1/2;
+
+$rb = $minute * (360 / 60);
+
+$ans = abs($rb - $ra) > (360 - abs($ra - $rb)) ? (360 - abs($ra - $rb)) : abs($rb - $ra);
+echo $ans . "\n";
