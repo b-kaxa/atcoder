@@ -1,7 +1,7 @@
 <?php
 
 $std = trim(fgets(STDIN));
-list($a, $b, $c, $d) = explode(" ", $std);
+list($a, $b) = explode(" ", $std);
 
 $taka = $b / $a;
 $aoki = $d / $c;
